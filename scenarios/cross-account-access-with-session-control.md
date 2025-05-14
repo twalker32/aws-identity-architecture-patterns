@@ -30,7 +30,7 @@ Create a role in the student account (`StudentScopedAccessRole`) with a trust po
     }
   }
 }
-
+```
 ### 2. **Attach Permission Policy (EC2-Only Access)**
 
 Attach a policy to `StudentScopedAccessRole` that limits actions to specific EC2 permissions:
@@ -50,6 +50,7 @@ Attach a policy to `StudentScopedAccessRole` that limits actions to specific EC2
     }
   ]
 }
+```
 ### 3. **Enforce Session Duration**
 
 When creating the `StudentScopedAccessRole`, set the `MaxSessionDuration` to **3600 seconds (1 hour)**.
@@ -68,7 +69,7 @@ aws iam update-role \
   --role-name StudentScopedAccessRole \
   --max-session-duration 3600
 ---
-
+```
 ### 🔥 Why It Matters
 
 Session limits prevent overprivileged access from lingering. It’s a lightweight governance guardrail that **reduces risk without breaking workflows**.
